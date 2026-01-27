@@ -228,6 +228,24 @@
         color: var(--color-accent);
     }
 
+    .contact-btn {
+        display: inline-block;
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 12px 30px;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-body);
+        letter-spacing: 0.5px;
+        transition: background 0.2s ease;
+        margin-top: 10px;
+    }
+
+    .contact-btn:hover {
+        background: #4a6fa5;
+    }
+
     /* Feature Image */
     .feature-image {
         width: 100%;
@@ -529,7 +547,7 @@
                     <h2 class="about-title">about me <span>| bio</span></h2>
                 </div>
                 <p class="about-text">
-                    I am Associate Professor at the <a href="https://irid.ufrj.br" target="_blank">Institute for International Relations and Defense (IRID)</a> at the Federal University of Rio de Janeiro (UFRJ) and at COPPEAD Business School. I am interested in Global South studies with focus on transnational dimensions in the Middle East and Latin America. I was a Fellow at Princeton's Institute for Advanced Study (2021-2023). I also serve as a recurring professor at Fundacao Getulio Vargas (FGV) MBA programs in International Relations. In my engagement work, I collaborate with governments, international organizations, and think-tanks, including extensive consultation on political risk and international security issues.
+                    I am Associate Professor at the <a href="https://irid.ufrj.br" target="_blank">Institute for International Relations and Defense (IRID)</a> at the Federal University of Rio de Janeiro (UFRJ) and at COPPEAD Business School. I am currently a Member of the <a href="https://www.ias.edu/sss" target="_blank">School of Social Science</a> at the Institute for Advanced Study in Princeton (2025-2026). I am interested in Global South studies with focus on transnational dimensions in the Middle East and Latin America. I also serve as a recurring professor at Fundacao Getulio Vargas (FGV) MBA programs in International Relations. In my engagement work, I collaborate with governments, international organizations, and think-tanks, including extensive consultation on political risk and international security issues.
                 </p>
                 <div class="about-expanded" id="aboutExpanded">
                     <p class="about-text">
@@ -549,6 +567,7 @@
                     </p>
                 </div>
                 <button class="read-more-btn" id="readMoreBtn">Read More</button>
+                <button class="contact-btn" id="contactBtn">Contact Me</button>
             </div>
             <img src="Brancoli-3.png" alt="Fernando Brancoli" class="feature-image">
         </div>
@@ -756,6 +775,19 @@
                 aboutExpanded.classList.remove('show');
                 readMoreBtn.textContent = 'Read More';
             }
+        });
+
+        // Contact Me button functionality
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-section="contact"]').classList.add('active');
+
+            // Switch sections
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+            document.getElementById('contact').classList.add('active');
+
+            window.scrollTo(0, 0);
         });
     </script>
 </body>

@@ -228,6 +228,24 @@
         color: var(--color-accent);
     }
 
+    .contact-btn {
+        display: inline-block;
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 12px 30px;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-body);
+        letter-spacing: 0.5px;
+        transition: background 0.2s ease;
+        margin-top: 10px;
+    }
+
+    .contact-btn:hover {
+        background: #4a6fa5;
+    }
+
     /* Feature Image */
     .feature-image {
         width: 100%;
@@ -529,7 +547,7 @@
                     <h2 class="about-title">sobre mim <span>| bio</span></h2>
                 </div>
                 <p class="about-text">
-                    Sou Professor Associado no <a href="https://irid.ufrj.br" target="_blank">Instituto de Relacoes Internacionais e Defesa (IRID)</a> da Universidade Federal do Rio de Janeiro (UFRJ) e na COPPEAD. Estou interessado em estudos do Sul Global com foco em dimensoes transnacionais no Oriente Medio e na America Latina. Fui Fellow no Institute for Advanced Study de Princeton (2021-2023). Tambem atuo como professor recorrente nos programas de MBA em Relacoes Internacionais da Fundacao Getulio Vargas (FGV). Em meu trabalho de engajamento, colaboro com governos, organizacoes internacionais e think-tanks, incluindo consultoria extensiva em questoes de risco politico e seguranca internacional.
+                    Sou Professor Associado no <a href="https://irid.ufrj.br" target="_blank">Instituto de Relacoes Internacionais e Defesa (IRID)</a> da Universidade Federal do Rio de Janeiro (UFRJ) e na COPPEAD. Atualmente sou Membro da <a href="https://www.ias.edu/sss" target="_blank">Escola de Ciencias Sociais</a> do Institute for Advanced Study em Princeton (2025-2026). Estou interessado em estudos do Sul Global com foco em dimensoes transnacionais no Oriente Medio e na America Latina. Tambem atuo como professor recorrente nos programas de MBA em Relacoes Internacionais da Fundacao Getulio Vargas (FGV). Em meu trabalho de engajamento, colaboro com governos, organizacoes internacionais e think-tanks, incluindo consultoria extensiva em questoes de risco politico e seguranca internacional.
                 </p>
                 <div class="about-expanded" id="aboutExpanded">
                     <p class="about-text">
@@ -549,6 +567,7 @@
                     </p>
                 </div>
                 <button class="read-more-btn" id="readMoreBtn">Leia Mais</button>
+                <button class="contact-btn" id="contactBtn">Entre em Contato</button>
             </div>
             <img src="../Brancoli-3.png" alt="Fernando Brancoli" class="feature-image">
         </div>
@@ -756,6 +775,19 @@
                 aboutExpanded.classList.remove('show');
                 readMoreBtn.textContent = 'Leia Mais';
             }
+        });
+
+        // Contact Me button functionality
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-section="contact"]').classList.add('active');
+
+            // Switch sections
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+            document.getElementById('contact').classList.add('active');
+
+            window.scrollTo(0, 0);
         });
     </script>
 </body>
