@@ -522,8 +522,8 @@
 
     <!-- HOME -->
     <section id="home" class="page-section active">
-        <div class="content-wrapper">
-            <div class="about-box">
+        <div class="section-container">
+            <div class="about-box" style="max-width: 800px; margin: 0 auto;">
                 <div class="about-header">
                     <img src="../Brancoli-3.png" alt="Fernando Brancoli" class="about-photo">
                     <h2 class="about-title">sobre mim <span>| bio</span></h2>
@@ -550,7 +550,6 @@
                 </div>
                 <button class="read-more-btn" id="readMoreBtn">Leia Mais</button>
             </div>
-            <img src="../Brancoli-3.png" alt="Fernando Brancoli" class="feature-image">
         </div>
     </section>
 
@@ -582,15 +581,17 @@
 
             <div class="publication-item">
                 <p class="publication-year">2023</p>
-                <h3 class="publication-title">Bolsonarismo: The Global Origins and Future of Brazil's Far Right</h3>
+                <h3 class="publication-title"><a href="https://www.rutgersuniversitypress.org/bolsonarismo/9781978838567" target="_blank">Bolsonarismo: The Global Origins and Future of Brazil's Far Right</a></h3>
                 <p class="publication-publisher">Rutgers University Press</p>
             </div>
 
             <div class="publication-item">
                 <p class="publication-year">2022</p>
-                <h3 class="publication-title">The Tropical Silk Road: The Future of China in South America</h3>
+                <h3 class="publication-title"><a href="https://www.sup.org/books/asian-studies/tropical-silk-road" target="_blank">The Tropical Silk Road: The Future of China in South America</a></h3>
                 <p class="publication-publisher">Stanford University Press</p>
             </div>
+
+            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--color-primary); margin: 40px 0 20px;">Artigos Revisados por Pares e Capitulos de Livros</h3>
 
             <p class="publications-note">
                 Autor de mais de uma duzia de artigos revisados por pares em periodicos de destaque sobre relacoes internacionais, estudos de seguranca e politica latino-americana.
@@ -648,12 +649,20 @@
     <section id="cv" class="page-section">
         <div class="section-container">
             <h2 class="section-title">Link para CV</h2>
-            <p class="publications-note">
-                Acesse meu curriculo academico completo e registros de publicacoes atraves dos links abaixo.
-            </p>
-            <div class="cv-links">
-                <a href="https://scholar.google.es/citations?user=7tK2RmUAAAAJ&hl=es" target="_blank" class="cv-btn">Google Scholar</a>
-                <a href="https://orcid.org/0000-0003-0429-2154" target="_blank" class="cv-btn">Perfil ORCID</a>
+            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+                <img src="../Brancoli _Profile.jpg" alt="Fernando Brancoli" style="width: 200px; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <div style="flex: 1; min-width: 300px;">
+                    <p class="publications-note">
+                        Acesse meu curriculo academico completo e registros de publicacoes atraves dos links abaixo.
+                    </p>
+                    <p class="publications-note">
+                        Voce pode acessar meu CV em portugues na base de dados do Ministerio da Educacao <a href="http://lattes.cnpq.br/3406943273224326" target="_blank">aqui</a>.
+                    </p>
+                    <div class="cv-links">
+                        <a href="https://scholar.google.es/citations?user=7tK2RmUAAAAJ&hl=es" target="_blank" class="cv-btn">Google Scholar</a>
+                        <a href="https://orcid.org/0000-0003-0429-2154" target="_blank" class="cv-btn">Perfil ORCID</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -686,7 +695,7 @@
     <footer class="site-footer">
         <div class="footer-content">
             <span class="footer-name">Fernando Brancoli</span>
-            <span class="footer-institution">UFRJ</span>
+            <span class="footer-email"><a href="mailto:fernando.brancoli@ufrj.br" style="color: rgba(255,255,255,0.7);">fernando.brancoli@ufrj.br</a></span>
         </div>
     </footer>
 
