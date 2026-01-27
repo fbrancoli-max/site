@@ -133,25 +133,21 @@
 
     /* Page Sections - Full Page */
     .page-section {
-        display: none;
+        display: none !important;
         min-height: calc(100vh - 150px);
         padding: 60px 20px;
         background: var(--color-bg);
     }
 
     .page-section.active {
-        display: block;
+        display: block !important;
     }
 
     /* Home Section */
-    #home {
-        display: flex;
+    #home.active {
+        display: flex !important;
         align-items: center;
         justify-content: center;
-    }
-
-    #home.active {
-        display: flex;
     }
 
     .content-wrapper {
