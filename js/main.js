@@ -3,42 +3,28 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', function() {
+            mobileToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
         });
 
         // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('a');
+        const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(function(link) {
             link.addEventListener('click', function() {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                mainNav.classList.remove('active');
             });
         });
     }
 
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        lastScrollTop = scrollTop;
-    });
-
     // Smooth scroll for anchor links
+    const header = document.querySelector('.site-header');
+
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -46,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                const navHeight = navbar.offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                const headerHeight = header ? header.offsetHeight : 80;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
                 window.scrollTo({
                     top: targetPosition,
@@ -57,31 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Fade in elements on scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe sections and cards
-    const animatedElements = document.querySelectorAll('.section, .research-card, .publication-item');
-    animatedElements.forEach(function(element) {
-        observer.observe(element);
-    });
-
     // Active navigation link highlighting
     const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-menu a[href^="#"]');
+    const navItems = document.querySelectorAll('.nav-list a[href^="#"]');
 
     function highlightNav() {
         const scrollPosition = window.scrollY + 100;
