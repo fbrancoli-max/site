@@ -187,6 +187,41 @@
         color: #fff;
     }
 
+    /* Hamburger toggle - hidden on desktop */
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 101;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-text);
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
     /* Page Sections - Full Page */
     .page-section {
         display: none !important;
@@ -573,23 +608,41 @@
             grid-template-columns: 1fr;
         }
 
+        .main-nav {
+            position: sticky;
+            top: 0;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+
         .nav-container {
-            gap: 15px;
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            padding: 10px 0;
+        }
+
+        .nav-container.active {
+            display: flex;
+        }
+
+        .nav-link {
+            padding: 12px 20px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .lang-switch {
+            margin-left: 0;
+            padding: 12px 20px;
         }
     }
 
     @media (max-width: 600px) {
         .site-title {
             font-size: 2rem;
-        }
-
-        .nav-container {
-            gap: 10px;
-        }
-
-        .nav-link {
-            font-size: 0.8rem;
-            padding: 10px 3px;
         }
     }
     </style>
@@ -601,6 +654,9 @@
     </header>
 
     <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
         <div class="nav-container">
             <button class="nav-link active" data-section="home">Inicio</button>
             <button class="nav-link" data-section="research">Pesquisa & Publicações</button>
