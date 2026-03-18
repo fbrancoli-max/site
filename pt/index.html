@@ -893,6 +893,16 @@
     </footer>
 
     <script>
+        // Mobile hamburger toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navContainer = document.querySelector('.nav-container');
+        if (navToggle && navContainer) {
+            navToggle.addEventListener('click', function() {
+                navToggle.classList.toggle('active');
+                navContainer.classList.toggle('active');
+            });
+        }
+
         // Navigation functionality
         document.querySelectorAll('.nav-link').forEach(button => {
             button.addEventListener('click', function() {
@@ -909,6 +919,10 @@
 
                 // Show selected section
                 document.getElementById(sectionId).classList.add('active');
+
+                // Close mobile menu
+                if (navToggle) { navToggle.classList.remove('active'); }
+                if (navContainer) { navContainer.classList.remove('active'); }
 
                 // Scroll to top
                 window.scrollTo(0, 0);
