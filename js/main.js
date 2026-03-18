@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.querySelector('.nav-container');
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('a');
+        // Close menu when clicking on a nav link
+        const navLinks = navMenu.querySelectorAll('.nav-link, a');
         navLinks.forEach(function(link) {
             link.addEventListener('click', function() {
                 navToggle.classList.remove('active');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('.main-nav');
     let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Active navigation link highlighting
     const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-menu a[href^="#"]');
+    const navItems = document.querySelectorAll('.nav-container a[href^="#"]');
 
     function highlightNav() {
         const scrollPosition = window.scrollY + 100;
