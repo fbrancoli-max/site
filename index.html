@@ -409,6 +409,31 @@
         font-style: italic;
     }
 
+    .book-item {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .book-cover img {
+        width: 100%;
+        height: auto;
+        display: block;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        transition: transform 0.2s ease;
+    }
+
+    .book-cover:hover img {
+        transform: translateY(-3px);
+    }
+
+    .book-blurb {
+        font-size: 0.9rem;
+        color: var(--color-text);
+        margin-top: 10px;
+    }
+
     .publications-note {
         font-size: 0.9rem;
         color: var(--color-text-light);
@@ -580,6 +605,10 @@
 
     /* Responsive */
     @media (max-width: 900px) {
+        .book-item {
+            grid-template-columns: 90px 1fr;
+            gap: 18px;
+        }
         .media-hero {
             grid-template-columns: 1fr;
         }
@@ -728,16 +757,24 @@
 
             <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 500; color: var(--color-primary); margin-bottom: 20px;">Books</h3>
 
-            <div class="publication-item">
-                <p class="publication-year">2023</p>
-                <h3 class="publication-title"><a href="https://www.rutgersuniversitypress.org/bolsonarismo/9781978838567" target="_blank">Bolsonarismo: The Global Origins and Future of Brazil's Far Right</a></h3>
-                <p class="publication-publisher">Rutgers University Press</p>
+            <div class="publication-item book-item">
+                <a class="book-cover" href="https://www.rutgersuniversitypress.org/bolsonarismo/9781978838567" target="_blank"><img src="cover-bolsonarismo.jpg" alt="Cover of Bolsonarismo: The Global Origins and Future of Brazil's Far Right" loading="lazy"></a>
+                <div>
+                    <p class="publication-year">2023</p>
+                    <h3 class="publication-title"><a href="https://www.rutgersuniversitypress.org/bolsonarismo/9781978838567" target="_blank">Bolsonarismo: The Global Origins and Future of Brazil's Far Right</a></h3>
+                    <p class="publication-publisher">Rutgers University Press</p>
+                    <p class="book-blurb">Drawing on interviews, archival research, and newly available public documents, the book traces how the coalition of neo-evangelical pastors, military personnel, and meritocratic ideologues around Jair Bolsonaro was assembled through transnational alliances, and what it means for the future of democracy in Brazil and beyond.</p>
+                </div>
             </div>
 
-            <div class="publication-item">
-                <p class="publication-year">2022</p>
-                <h3 class="publication-title"><a href="https://www.sup.org/books/asian-studies/tropical-silk-road" target="_blank">The Tropical Silk Road: The Future of China in South America</a></h3>
-                <p class="publication-publisher">Edited with Paul Amar, Lisa Rofel, María Amelia Viteri, and Consuelo Fernández-Salvador. Stanford University Press, 2022. Translated into Portuguese as <a href="https://editora.ufrj.br/produto/a-rota-da-seda-tropical-o-futuro-da-china-na-america-do-sul/" target="_blank"><em>A rota da seda tropical: o futuro da China na América do Sul</em></a> (Editora UFRJ) and into Spanish as <a href="https://libros.usfq.edu.ec/index.php/usfqpress/catalog/book/88" target="_blank"><em>La ruta tropical de la seda: el futuro de China en América del Sur</em></a> (USFQ Press, 2025).</p>
+            <div class="publication-item book-item">
+                <a class="book-cover" href="https://www.sup.org/books/asian-studies/tropical-silk-road" target="_blank"><img src="cover-tropical-silk-road.jpg" alt="Cover of The Tropical Silk Road: The Future of China in South America" loading="lazy"></a>
+                <div>
+                    <p class="publication-year">2022</p>
+                    <h3 class="publication-title"><a href="https://www.sup.org/books/asian-studies/tropical-silk-road" target="_blank">The Tropical Silk Road: The Future of China in South America</a></h3>
+                    <p class="publication-publisher">Edited with Paul Amar, Lisa Rofel, María Amelia Viteri, and Consuelo Fernández-Salvador. Stanford University Press, 2022. Translated into Portuguese as <a href="https://editora.ufrj.br/produto/a-rota-da-seda-tropical-o-futuro-da-china-na-america-do-sul/" target="_blank"><em>A rota da seda tropical: o futuro da China na América do Sul</em></a> (Editora UFRJ) and into Spanish as <a href="https://libros.usfq.edu.ec/index.php/usfqpress/catalog/book/88" target="_blank"><em>La ruta tropical de la seda: el futuro de China en América del Sur</em></a> (USFQ Press, 2025).</p>
+                    <p class="book-blurb">Thirty short essays by economists, anthropologists, political scientists, community organizers, environmental activists, and journalists capture the juncture between China's expanding influence across the Global South and the unraveling of the Amazonian, Cerrado, and Andean biomes.</p>
+                </div>
             </div>
 
             <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--color-primary); margin: 40px 0 20px;">Selected Peer-Reviewed Articles and Book Chapters</h3>
