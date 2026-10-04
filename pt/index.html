@@ -637,29 +637,12 @@
         font-size: 0.85rem;
     }
 
-    .media-hero {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 40px;
-    }
-
-    .media-hero img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
 
     /* Responsive */
     @media (max-width: 900px) {
         .book-item {
             grid-template-columns: 90px 1fr;
             gap: 18px;
-        }
-        .media-hero {
-            grid-template-columns: 1fr;
         }
         .content-wrapper {
             grid-template-columns: 1fr;
@@ -871,28 +854,25 @@
         <div class="section-container">
             <h2 class="section-title">Engajamento Público & Mídia</h2>
 
-            <div class="media-hero">
-                <img src="../cnn.jpg" alt="Fernando Brancoli ao vivo na CNN Brasil">
-                <div>
-                    <div class="policy-category" style="margin-bottom: 20px;">
-                        <h3>Mídia Internacional</h3>
-                        <ul class="policy-list">
-                            <li>Al Jazeera</li>
-                            <li>CNN</li>
-                            <li>Le Monde Diplomatique</li>
-                            <li>Los Angeles Times</li>
-                        </ul>
-                    </div>
-                    <div class="policy-category">
-                        <h3>Mídia Brasileira</h3>
-                        <ul class="policy-list">
-                            <li>TV Globo</li>
-                            <li>CNN Brasil</li>
-                            <li>Folha de São Paulo</li>
-                            <li>GloboNews</li>
-                            <li>Revista piauí</li>
-                        </ul>
-                    </div>
+            <div class="policy-grid">
+                <div class="policy-category">
+                    <h3>Mídia Internacional</h3>
+                    <ul class="policy-list">
+                        <li>Al Jazeera</li>
+                        <li>CNN</li>
+                        <li>Le Monde Diplomatique</li>
+                        <li>Los Angeles Times</li>
+                    </ul>
+                </div>
+                <div class="policy-category">
+                    <h3>Mídia Brasileira</h3>
+                    <ul class="policy-list">
+                        <li>TV Globo</li>
+                        <li>CNN Brasil</li>
+                        <li>Folha de São Paulo</li>
+                        <li>GloboNews</li>
+                        <li>Revista piauí</li>
+                    </ul>
                 </div>
             </div>
 
