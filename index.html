@@ -301,10 +301,14 @@
 
     .read-more-btn {
         display: block;
-        text-align: center;
+        text-align: left;
         color: #4a6fa5;
         font-size: 0.9rem;
-        margin: 20px 0;
+        margin: 8px 0 0;
+        padding: 8px 0;
+        min-height: 44px;
+        text-decoration: underline;
+        text-underline-offset: 4px;
         cursor: pointer;
         background: none;
         border: none;
@@ -313,6 +317,18 @@
 
     .read-more-btn:hover {
         color: var(--color-accent);
+    }
+
+    .about-contact {
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .read-more-btn:focus-visible,
+    .contact-btn:focus-visible {
+        outline: 2px solid #4a6fa5;
+        outline-offset: 4px;
     }
 
     .contact-btn {
@@ -326,7 +342,7 @@
         font-family: var(--font-body);
         letter-spacing: 0.5px;
         transition: background 0.2s ease;
-        margin-top: 10px;
+        margin-top: 0;
     }
 
     .contact-btn:hover {
@@ -757,8 +773,10 @@
                         In addition to my academic work, I am deeply involved in graduate training, mentoring, and extension programs, including initiatives aimed at widening access to international studies and strengthening dialogue between universities and public schools. Before entering academia, I collaborated with international organizations and development agencies on projects related to governance and social policy.
                     </p>
                 </div>
-                <button class="read-more-btn" id="readMoreBtn">Read More</button>
-                <button class="contact-btn" id="contactBtn">Contact Me</button>
+                <button class="read-more-btn" id="readMoreBtn" type="button" aria-expanded="false" aria-controls="aboutExpanded">Read full bio</button>
+                <div class="about-contact">
+                    <button class="contact-btn" id="contactBtn" type="button">Contact Me</button>
+                </div>
             </div>
             <img src="Brancoli-3.jpg" alt="Fernando Brancoli" class="feature-image">
         </div>
@@ -1095,12 +1113,13 @@
 
         readMoreBtn.addEventListener('click', function() {
             isExpanded = !isExpanded;
+            readMoreBtn.setAttribute('aria-expanded', String(isExpanded));
             if (isExpanded) {
                 aboutExpanded.classList.add('show');
-                readMoreBtn.textContent = 'Read Less';
+                readMoreBtn.textContent = 'Show less';
             } else {
                 aboutExpanded.classList.remove('show');
-                readMoreBtn.textContent = 'Read More';
+                readMoreBtn.textContent = 'Read full bio';
             }
         });
 
