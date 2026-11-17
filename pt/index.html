@@ -526,11 +526,26 @@
 
 
     /* Selected public engagement */
-    .appearance-group { max-width: 820px; margin-top: 48px; }
+    .appearance-group { max-width: 820px; margin-top: 12px; }
+    .appearance-group:first-of-type { margin-top: 28px; }
+    .appearance-group > summary {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 16px; min-height: 48px; padding: 10px 16px;
+        list-style: none; cursor: pointer;
+        background: var(--color-bg-beige); border-radius: 6px;
+    }
+    .appearance-group > summary::-webkit-details-marker { display: none; }
+    .appearance-group > summary::after {
+        content: ""; flex: none; width: 9px; height: 9px;
+        border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+        color: var(--color-primary); transform: translateY(-2px) rotate(45deg);
+    }
+    .appearance-group[open] > summary { margin-bottom: 12px; }
+    .appearance-group[open] > summary::after { transform: translateY(2px) rotate(225deg); }
     .appearance-group-title {
         font-family: var(--font-heading);
-        font-size: 1.3rem; font-weight: 500;
-        color: var(--color-primary); margin-bottom: 16px;
+        font-size: 1.3rem; font-weight: 500; line-height: 1.35;
+        color: var(--color-primary);
     }
     .appearance-item { padding: 22px 0; border-bottom: 1px solid var(--color-border); }
     .appearance-item:last-child { border-bottom: none; }
@@ -550,7 +565,7 @@
     }
     .appearance-details { margin-top: 12px; }
     .appearance-details summary { cursor: pointer; font-size: 0.9rem; width: fit-content; }
-    .appearance-details summary:focus-visible, .appearance-item a:focus-visible {
+    .appearance-group > summary:focus-visible, .appearance-details summary:focus-visible, .appearance-item a:focus-visible {
         outline: 2px solid #4a6fa5; outline-offset: 4px;
     }
     .appearance-details p { margin-top: 14px; }
@@ -567,7 +582,6 @@
         background: #fff; border: 1px solid var(--color-border); border-radius: 4px;
     }
     @media (max-width: 600px) {
-        .appearance-group { margin-top: 36px; }
         .appearance-event { grid-template-columns: minmax(0, 1fr); gap: 14px; }
         .appearance-featured { padding: 18px; }
         .appearance-gallery a { width: 64px; }
@@ -925,8 +939,8 @@
                 </p>
             </div>
 
-            <section class="appearance-group" aria-labelledby="interviews-heading">
-                <h3 class="appearance-group-title" id="interviews-heading">Entrevistas e conversas</h3>
+            <details class="appearance-group">
+                <summary><h3 class="appearance-group-title" id="interviews-heading">Entrevistas e conversas</h3></summary>
                 <div class="appearance-item appearance-featured">
                     <h4 class="appearance-title"><a href="https://www.ias.edu/sss/reflections-and-memories" target="_blank" rel="noopener">Critical Intent as a Form of Life — Entrevista sobre Didier Fassin</a></h4>
                     <p class="appearance-meta">Institute for Advanced Study, Princeton · <span class="appearance-date">2026</span></p>
@@ -959,10 +973,10 @@
                     <p class="appearance-meta">O Assunto · G1/Globo · <span class="appearance-date">Junho 2025</span></p>
                     <p class="appearance-link"><a href="https://g1.globo.com/podcast/o-assunto/noticia/2025/06/18/o-papel-dos-eua-na-guerra-entre-israel-e-ira-o-assunto-1492.ghtml" target="_blank" rel="noopener">Ouvir o episódio</a></p>
                 </div>
-            </section>
+            </details>
 
-            <section class="appearance-group" aria-labelledby="talks-heading">
-                <h3 class="appearance-group-title" id="talks-heading">Palestras e residências</h3>
+            <details class="appearance-group">
+                <summary><h3 class="appearance-group-title" id="talks-heading">Palestras e residências</h3></summary>
                 <div class="appearance-item">
                     <h4 class="appearance-title"><a href="https://anthropology.sas.upenn.edu/events/2026/11/09/november-9-2026-fernando-brancoli-federal-university-rio-de-janeiro-ufrj-brazil" target="_blank" rel="noopener">Treze horas em uma pista clandestina: extração e ilegalidade na Amazônia brasileira</a></h4>
                     <p class="appearance-meta">University of Pennsylvania · <span class="appearance-date">9 de novembro de 2026</span></p>
@@ -1001,10 +1015,10 @@
                         <a href="../mtholyoke-flyer.png" target="_blank" rel="noopener"><img src="../mtholyoke-flyer.png" alt="Cartaz da conversa The Far Right in Latin America" loading="lazy"></a>
                     </div>
                 </div>
-            </section>
+            </details>
 
-            <section class="appearance-group" aria-labelledby="articles-heading">
-                <h3 class="appearance-group-title" id="articles-heading">Artigos e resenhas</h3>
+            <details class="appearance-group">
+                <summary><h3 class="appearance-group-title" id="articles-heading">Artigos e resenhas</h3></summary>
                 <div class="appearance-item">
                     <h4 class="appearance-title"><a href="https://securityincontext.org/posts/brazils-election-is-not-a-replay-of-biden-trump" target="_blank" rel="noopener">A eleição brasileira não é uma reprise de Biden–Trump: por que analogias equivocadas não explicam nenhum dos dois países</a></h4>
                     <p class="appearance-meta">Security in Context · Em inglês · <span class="appearance-date">Outubro 2026</span></p>
@@ -1030,7 +1044,7 @@
                     <p class="appearance-meta">Times Literary Supplement · Patrick Wilcken · <span class="appearance-date">Outubro 2024</span></p>
                     <p class="appearance-link"><a href="../papers/tls-review-bolsonarismo-2024.html" target="_blank" rel="noopener">Ler a resenha</a> · <a href="https://www.the-tls.co.uk/politics-by-region/south-american-politics/lula-fernando-morais-bolsonarismo-fernando-bancoli-review-patrick-wilcken" target="_blank" rel="noopener">Original no TLS</a></p>
                 </div>
-            </section>
+            </details>
         </div>
     </section>
 
